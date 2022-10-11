@@ -1,10 +1,9 @@
 <template>
     <div class="conteiner">
-        <div class="centralizar">
-            <h1>to-do-list</h1> 
-        </div>
-       
-
+        <form >
+          <h3>Digite um item</h3>
+        </form>
+      
     </div>
 </template>
 <script>
@@ -15,12 +14,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  body{
+    background: rgb(123, 210, 250);
+  }
   .conteiner{
-    background: rgb(223, 215, 215);
+    background: white;
     width: 800px;
-    height: 80px;
-    text-align: center; 
+    height: 60px;
     padding-top: 15px;   
+  }
+  .teste{
+    background: blue;
   }
 </style>
