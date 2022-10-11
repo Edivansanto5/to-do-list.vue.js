@@ -5,7 +5,7 @@
       <input type="text">
         <button type="button" @click="adicionar"> Enviar</button>
         <ul>
-          <li v-for="lista in listas" :key="lista">lista1</li>
+          <li v-for="lista in listas" :key="lista">{{lista}}</li>
           
         </ul>
     </form>
