@@ -5,7 +5,7 @@
       <input type="text">
         <button type="button" @click="adicionar"> Enviar</button>
         <ul>
-          <li>lista1</li>
+          <li v-for="lista in listas" :key="lista">lista1</li>
           
         </ul>
     </form>
@@ -18,7 +18,7 @@ export default {
   name:'toList', 
   data(){
     return{
-      lista:['lista1','lista2','lista3']
+      listas:['lista1','lista2','lista3']
     }
   },
   methods:{
