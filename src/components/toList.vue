@@ -1,19 +1,26 @@
 <template>
-    <div class="conteiner">
-        <form >
-          <h3>Digite um item</h3>
-          <input type="text">
-          <button type="button" @click="adicionar"> Enviar</button>
+  <div class="conteiner">
+    <form >
+      <h3>Digite um item</h3>
+      <input type="text">
+        <button type="button" @click="adicionar"> Enviar</button>
+        <ul>
+          <li>lista1</li>
           
-
-        </form>
-    </div>
+        </ul>
+    </form>
+  </div>
     
 </template>
 <script>
 
 export default {
   name:'toList', 
+  data(){
+    return{
+      lista:['lista1','lista2','lista3']
+    }
+  },
   methods:{
   adicionar(){
     console.log('você clicou !!!!!');
