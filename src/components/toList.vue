@@ -1,6 +1,9 @@
 <template>
     <div class="conteiner">
-        <h1>teste</h1>
+        <div class="centralizar">
+            <h1>to-do-list</h1> 
+        </div>
+       
 
     </div>
 </template>
@@ -13,7 +16,10 @@ export default {
 </script>
 
 <style scoped>
-    .conteiner{
-        background-color: black;
-    }
+  .conteiner{
+    background: rgb(223, 215, 215);
+    width: 800px;
+    height: 100px;
+    text-align: center;    
+  }
 </style>

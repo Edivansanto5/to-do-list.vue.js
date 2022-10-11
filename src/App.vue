@@ -13,3 +13,8 @@ export default {
   }
 }
 </script>
+<style>
+    body{
+      background: rgba(0, 183, 255, 0.753) !important;
+    }
+</style>
