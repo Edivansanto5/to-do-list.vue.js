@@ -19,7 +19,8 @@ export default {
   .conteiner{
     background: rgb(223, 215, 215);
     width: 800px;
-    height: 100px;
-    text-align: center;    
+    height: 80px;
+    text-align: center; 
+    padding-top: 15px;   
   }
 </style>
