@@ -45,7 +45,7 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }           // remove limpa o canto do imput
+      }          
     },
     deleta(){
       this.listas.pop(this.lista)
