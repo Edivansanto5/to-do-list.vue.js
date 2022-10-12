@@ -48,7 +48,6 @@ export default {
       }           // remove limpa o canto do imput
     },
     deleta(){
-      console.log('veio parar aqui')
       this.listas.pop(this.lista)
     },
     
@@ -56,7 +55,6 @@ export default {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
     }
-    
     
   }
  
@@ -107,6 +105,5 @@ export default {
   .mr-10 {
     margin-right: 10px;
   }
-  
   
 </style>
