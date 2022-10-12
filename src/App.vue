@@ -20,6 +20,7 @@
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
 
           <a class="mr-10" href="#" @click="deleta">Excluir</a>
+          <img src="" alt="">
         </div>
     </form>
     <br>
@@ -47,8 +48,10 @@ export default {
       }           // remove limpa o canto do imput
     },
     deleta(){
-      console.log('veio parar aqui');
+      console.log('veio parar aqui')
+      this.listas.pop(this.lista)
     },
+    
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
