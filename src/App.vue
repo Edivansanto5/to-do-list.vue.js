@@ -45,7 +45,7 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }          
+      }          // testes commit
     },
     deleta(){
       this.listas.pop(this.lista)
