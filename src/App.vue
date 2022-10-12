@@ -50,10 +50,7 @@ export default {
     deleta(){
       this.listas.pop(this.lista)
     },
-    deleta02(){
-      this.listas.pop(this.lista)
-    },
-
+    
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
