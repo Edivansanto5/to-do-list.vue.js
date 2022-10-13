@@ -43,10 +43,7 @@ export default {
         text: '',
       }          
     },
-    deleta(){
-      console.log('veio parar aqui');
-    },
-
+    
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
