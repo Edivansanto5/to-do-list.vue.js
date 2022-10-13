@@ -41,7 +41,7 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }           // remove limpa o canto do imput
+      }          
     },
     deleta(){
       console.log('veio parar aqui');
