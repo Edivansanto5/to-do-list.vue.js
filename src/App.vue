@@ -1,16 +1,9 @@
 <template>
   <div class="conteiner">
     <form >
-      <h3>Digite um item</h3>
-      <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
+      <h3>Digite um nome de frutas</h3>
+      <input type="text" v-model="lista.text" placeholder="Digite Qualque coisa" required maxlength="25">
         <button type="button" @click="addLista()" > Enviar</button>
-
-        <!-- <ul>
-          <li  v-for="lista in listas" :key="lista">
-            {{ lista.text }}
-            <a href="#" @click="deleta">Excluir</a>
-          </li>
-        </ul> -->
 
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
@@ -20,7 +13,7 @@
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
 
           <a class="mr-10" href="#" @click="deletaItem">Excluir</a>
-          <img src="" alt="">
+       
         </div>
     </form>
     <br>
@@ -45,17 +38,22 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }          
+      }
+           
     },
+   
     deletaItem(){
       this.listas.pop(this.lista)
-      console.log('fim da função');
+      console.log('fim da função')
     },
-    // jlhlkjhfljglagfdljaskfdgasfgjhgkjfa
+  
+    // chegando que estou pegando o checkbox
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
-    }
+      console.log('teste');
+    },
+
     
   }
  
