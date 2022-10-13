@@ -49,6 +49,7 @@ export default {
     },
     deletaItem(){
       this.listas.pop(this.lista)
+      console.log('fim da função');
     },
     // jlhlkjhfljglagfdljaskfdgasfgjhgkjfa
     changeChecked (index) {
