@@ -86,9 +86,11 @@ export default {
   ul{
     
     text-align: justify;
+    
   }
   li{
     padding-top: 10px;
+   
   }
   a{
     color: red;
