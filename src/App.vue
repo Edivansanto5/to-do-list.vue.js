@@ -19,7 +19,7 @@
 
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
 
-          <a class="mr-10" href="#" @click="deleta">Excluir</a>
+          <a class="mr-10" href="#" @click="deletaItem">Excluir</a>
           <img src="" alt="">
         </div>
     </form>
@@ -47,7 +47,7 @@ export default {
         text: '',
       }          
     },
-    deleta(){
+    deletaItem(){
       this.listas.pop(this.lista)
     },
     
