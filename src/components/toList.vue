@@ -1,11 +1,9 @@
 <template>
   <div class="conteiner">
     <form >
-      <h3>Digite um item</h3>
-      <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
+      <h3>Digite um nome de frutas</h3>
+      <input type="text" v-model="lista.text" placeholder="Digite Qualque coisa" required maxlength="25">
         <button type="button" @click="addLista()" > Enviar</button>
-
-   
 
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
@@ -14,7 +12,8 @@
 
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
 
-          <a class="mr-10" href="#" @click="deleta">Excluir</a>
+          <a class="mr-10" href="#" @click="deletaItem">Excluir</a>
+       
         </div>
     </form>
     <br>
@@ -22,7 +21,6 @@
     
 </template>
 <script>
-
 export default {
   name:'toList', 
   data(){
@@ -31,7 +29,6 @@ export default {
         checked: false,
         text: '',
       },
-
       listas: [],
     }
   },
@@ -41,14 +38,22 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }          
+      }
+           
     },
+   
+    deletaItem(){
+      this.listas.pop(this.lista)
+      console.log('fim da função')
+    },
+  // teste
     
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
-    }
-    
+      console.log('teste');
+    },
+
     
   }
  
@@ -75,35 +80,31 @@ export default {
     background: #4fc08c;
     width: 60px;
     margin: 5px;
-
   }
   ul{
     
     text-align: justify;
-
+    
   }
   li{
     padding-top: 10px;
+   
   }
   a{
     color: red;
   }
-
   .line-through {
     text-decoration: line-through;
     color: rgba(0, 0, 0, 0.3);
   }
-
   .list {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 15px;
   }
-
   .mr-10 {
     margin-right: 10px;
   }
-  
   
 </style>
