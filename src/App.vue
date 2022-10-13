@@ -47,7 +47,7 @@ export default {
       console.log('fim da função')
     },
   
-    // chegando que estou pegando o checkbox
+    
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
