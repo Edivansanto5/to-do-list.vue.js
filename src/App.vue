@@ -46,7 +46,7 @@ export default {
       this.listas.pop(this.lista)
       console.log('fim da função')
     },
-  
+  // teste
     
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
