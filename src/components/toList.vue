@@ -5,12 +5,7 @@
       <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
         <button type="button" @click="addLista()" > Enviar</button>
 
-        <!-- <ul>
-          <li  v-for="lista in listas" :key="lista">
-            {{ lista.text }}
-            <a href="#" @click="deleta">Excluir</a>
-          </li>
-        </ul> -->
+   
 
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
