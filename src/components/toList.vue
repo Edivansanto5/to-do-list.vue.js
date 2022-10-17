@@ -5,12 +5,7 @@
       <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
         <button type="button" @click="addLista()" > Enviar</button>
 
-        <!-- <ul>
-          <li  v-for="lista in listas" :key="lista">
-            {{ lista.text }}
-            <a href="#" @click="deleta">Excluir</a>
-          </li>
-        </ul> -->
+   
 
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
@@ -19,7 +14,7 @@
 
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
 
-          <a class="mr-10" href="#" @click="deletaItem">Excluir</a>
+          <a class="mr-10" href="#" @click="deleta">Excluir</a>
         </div>
     </form>
     <br>
@@ -46,10 +41,11 @@ export default {
       this.lista = {
         checked: false,
         text: '',
-      }           // remove limpa o canto do imput
+      }          
     },
-    deletaItem(){
+    deleta(){
       this.listas.pop(this.lista)
+      
     },
 
     changeChecked (index) {
