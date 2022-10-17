@@ -9,7 +9,7 @@
 
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
-            <input :id="index" type="checkbox" v-model="lista.checked" @click="changeChecked(index)" />
+            <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)" />
           </form>
 
           <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
@@ -43,17 +43,18 @@ export default {
         text: '',
       }          
     },
-    deleta(){
-      this.listas.pop(this.lista)
-      
-    },
-
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
       console.log(this.listas[index].checked)
-    }
+    },
+    deleta(){
+                                                                                                                                                                                                                                                                                                            
+      this.listas.pop(this.listas)
+      console.log('veio parar aqui');
+    },
+
     
-    
+     
   }
  
 }
@@ -70,10 +71,9 @@ export default {
     padding-top: 15px;  
     text-align: center; 
     border-radius: 15px;
+   
   }
-  .teste{
-    background: blue;
-  }
+ 
   button{
     border-radius: 50px;
     background: #4fc08c;
@@ -81,11 +81,7 @@ export default {
     margin: 5px;
 
   }
-  ul{
-    
-    text-align: justify;
 
-  }
   li{
     padding-top: 10px;
   }
@@ -100,7 +96,8 @@ export default {
 
   .list {
     display: flex;
-    justify-content: center;
+    justify-content: justify;
+    padding-left: 160px;
     margin-top: 15px;
     margin-bottom: 15px;
   }
