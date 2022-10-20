@@ -45,12 +45,13 @@ export default {
     },
     changeChecked (index) {
       this.listas[index].checked = !this.listas[index].checked
-      console.log(this.listas[index].checked)
+      console.log(this.listas[index].checked) 
     },
     deleta(){
-                                                                                                                                                                                                                                                                                                            
+      
       this.listas.pop(this.listas)
-      console.log('veio parar aqui');
+      console.log('veio parar aqui');                                                            
+  
     },
 
     
