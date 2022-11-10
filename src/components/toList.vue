@@ -2,7 +2,7 @@
   <div class="conteiner">
     <form >
       <h3>Digite um item</h3>
-      <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
+      <input type="text" v-model.trim="lista.text" id="todo" @keyup.enter="add(todo)" placeholder="Digite Qualque coisa">
         <button type="button" @click="addLista()" > Enviar</button>
 
    
