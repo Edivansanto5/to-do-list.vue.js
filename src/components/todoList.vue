@@ -20,14 +20,14 @@ export default {
 
 <style>
     .conteiner{
-        background: red;
+        
         width: 300px;
     }
     .box{
         align-items: center;
     }
     body{
-        background: rgba(135, 208, 135, 0.712);
+        background:#161722 ;
     }
 
 </style>
