@@ -10,9 +10,10 @@
                 <option value="">Fazendo</option>
                 <option value="">Feito</option>
             </select> 
-            <input type="text" placeholder="Digite aqui uma Tarefa"> <img src="../assets/img/close-icon.png" alt="">
+            <input type="text" placeholder="Digite aqui uma Tarefa"> 
+            <button>Adcionar</button><img src="../assets/img/close-icon.png" alt="">
             <br><br>
-        </div>   
+        </div>
     </div>
 </template>
 <script>
