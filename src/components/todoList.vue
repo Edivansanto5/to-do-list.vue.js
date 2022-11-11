@@ -8,6 +8,8 @@
             <button class="btn" type="###">Status</button>
             <input type="text" placeholder="Digite aqui uma Tarefa"> 
             <button class="btn" @click="addLista()">Adcionar</button>
+            <i class="fab fa-earlybirds"></i>
+<i class="fab fa-vuejs"></i>
             
             <br><br>
             <!-- <img src="../assets/excluir.png" @click="apertou()"> -->
