@@ -9,7 +9,8 @@
                 <option value="">A fazer</option>
                 <option value="">Fazendo</option>
                 <option value="">Feito</option>
-            </select>
+            </select> 
+            <input type="text" placeholder="Digite aqui uma Tarefa"> <img src="../assets/img/close-icon.png" alt="">
         </div>   
     </div>
 </template>
