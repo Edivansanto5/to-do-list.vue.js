@@ -11,6 +11,7 @@
                 <option value="">Feito</option>
             </select> 
             <input type="text" placeholder="Digite aqui uma Tarefa"> <img src="../assets/img/close-icon.png" alt="">
+            <br><br>
         </div>   
     </div>
 </template>
