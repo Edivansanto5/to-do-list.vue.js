@@ -4,9 +4,6 @@
       <h3>Digite um item</h3>
       <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
         <button type="button" @click="addLista()" > Enviar</button>
-
-   
-
         <div v-for="(lista, index) in listas" :key="index" class="list">
           <form class="mr-10" >
             <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)" />
