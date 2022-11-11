@@ -5,14 +5,10 @@
         </div> <br> 
         <form class="tarefas">
             <h1>{{nome}}</h1>
-            <button class="btn">Status</button>
-                <!-- <select class="select">
-                    <option value="">A fazer</option>
-                    <option value="">Fazendo</option>
-                    <option value="">Feito</option>
-                </select>  -->
+            <button class="btn" type="###">Status</button>
             <input type="text" placeholder="Digite aqui uma Tarefa"> 
-            <button class="btn">Adcionar</button>
+            <button class="btn" @click="addLista()">Adcionar</button>
+            
             <br><br>
             <!-- <img src="../assets/excluir.png" @click="apertou()"> -->
         </form>
@@ -24,16 +20,14 @@ export default {
     name:'todoList',
     data(){
         return{
+
             title:'TO-DO-LIST',
             nome:'Bem-vindo Ao Gerênciamento de Tarefas',
             status:['A Fazer','Fazendo','Feito'],
-            lista:['']
+           
         }
-    },methods:{
-        apertou(){
-            console.log('apertou');
-        }
-    }  
+    },
+   
 }
 </script>
 
