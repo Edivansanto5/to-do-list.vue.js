@@ -2,7 +2,15 @@
     <div class="conteiner">
         <div class="box">
             <h1>{{title}}</h1>
-        </div>    
+        </div> <br> 
+        <div class="tarefas">
+            <h1>{{nome}}</h1>
+            <select >
+                <option value="">A fazer</option>
+                <option value="">Fazendo</option>
+                <option value="">Feito</option>
+            </select>
+        </div>   
     </div>
 </template>
 <script>
@@ -11,7 +19,10 @@ export default {
     name:'todoList',
     data(){
         return{
-            title:'Bem-Vindo a Lista de Tarefas'
+            title:'TO-DO-LIST',
+            nome:'Bem-vindo Ao Gerênciamento de Tarefas',
+            status:['A Fazer','Fazendo','Feito']
+
         }
     }
    
@@ -19,15 +30,27 @@ export default {
 </script>
 
 <style>
-    .conteiner{
-        
-        width: 300px;
+    .conteiner {   
+    background: white;
+    width: 600px;
+    height: 80px;
+    padding-top: 15px;  
+    text-align: center; 
+    border-radius: 15px;
+   
     }
-    .box{
-        align-items: center;
+    .tarefas{
+    background: white;
+    width: 600px;
+    padding-top: 15px;  
+    text-align: center; 
+    border-radius: 15px;
     }
     body{
-        background:#161722 ;
+        background: #4fc08c;
+     
     }
+    
 
+    
 </style>
