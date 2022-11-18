@@ -1,20 +1,20 @@
 <template>
   <div>
-    <!-- <toList/> -->
-    <todoList/>
+
+    <toList/> 
+     
 
     
   </div>
 </template>
 <script>
-import todoList from './components/todoList.vue'
-// import toList from './components/toList.vue'
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
+
+import toList from './components/toList.vue'
+
   export default{
     components:{
-      // toList,
-      todoList
+     toList,
+     
     }
   }
 </script>

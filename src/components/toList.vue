@@ -1,19 +1,22 @@
 <template>
   <div class="conteiner">
-    <form >
-      <h3>Digite um item</h3>
-      <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
-        <button type="button" @click="addLista()" > Enviar</button>
-        <div v-for="(lista, index) in listas" :key="index" class="list">
-          <form class="mr-10" >
-            <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)" />
-          </form>
+    <h3>Digite um item</h3>
+    <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa"> <!-- ok-->
+    <button type="button" @click="addLista()" > Enviar</button>
 
-          <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span>
+    <div v-for="(lista, index) in listas" :key="index" class="list">
+      <form class="mr-10" >
+        <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)"  />
 
-          <a class="mr-10" href="#" @click="deleta">Excluir</a>
-        </div>
-    </form>
+      </form>
+        <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span> 
+        <button class="btn">A fazer</button>
+        <button class="btn">Fazendo</button>
+        <button class="btn">Feito</button>
+        <button class="btn-excluir" @click="deleta">Excluir</button>
+      
+    </div>
+    <br>
     <br>
   </div>
     
@@ -51,8 +54,6 @@ export default {
   
     },
 
-    
-     
   }
  
 }
@@ -73,12 +74,28 @@ export default {
   }
  
   button{
-    border-radius: 50px;
+    border-radius: 10px;
     background: #4fc08c;
-    width: 60px;
+    width: 120px;
+    height: 40px;
     margin: 5px;
+    font-size: 20px;
 
   }
+  .btn{
+    border-radius: 10px;
+    background: #5cb2e4;
+    width: 140px;
+    height: 40px;
+    margin: 5px;
+    font-size: 22px;
+
+  }
+  .btn-excluir{
+    background: red;
+    
+  }
+
 
   li{
     padding-top: 10px;
@@ -98,10 +115,14 @@ export default {
     padding-left: 160px;
     margin-top: 15px;
     margin-bottom: 15px;
+    font-size: 28px;
   }
 
   .mr-10 {
     margin-right: 10px;
+  }
+  input{
+    font-size: 22px;
   }
   
   
