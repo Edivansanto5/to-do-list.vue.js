@@ -1,6 +1,6 @@
 <template>
   <div class="conteiner">
-    <h3>Digite um item</h3>
+    <h1>Todo-List</h1>
     <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa"> <!-- ok-->
     <button type="button" @click="addLista()" > Enviar</button>
 
@@ -89,13 +89,14 @@ export default {
     height: 40px;
     margin: 5px;
     font-size: 22px;
+    opacity: 85%;
 
   }
   .btn-excluir{
     background: red;
+    opacity: 85%;
     
   }
-
 
   li{
     padding-top: 10px;
@@ -124,6 +125,5 @@ export default {
   input{
     font-size: 22px;
   }
-  
-  
+
 </style>
