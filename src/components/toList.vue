@@ -25,6 +25,7 @@
     <!-- <rawDisplayer class="col-3" :value="list1" title="List 1" />
     <rawDisplayer class="col-3" :value="list2" title="List 2" /> -->
 
+
 </template>
 <script>
 import draggable from "vuedraggable";
@@ -39,15 +40,15 @@ export default {
   data() {
     return {
       list1: [
-        { name: "John", id: 1 },
-        { name: "Joao", id: 2 },
-        { name: "Jean", id: 3 },
-        { name: "Gerard", id: 4 }
+        { name: "John"},
+        { name: "Joao"},
+        { name: "Jean"},
+        { name: "Gerard"}
       ],
       list2: [
-        { name: "Juan", id: 5 },
-        { name: "Edgard", id: 6 },
-        { name: "Johnson", id: 7 }
+        { name: "Juan"},
+        { name: "Edgard"},
+        { name: "Johnson"}
       ],
       list3: [
         { name: "Edivan"},
@@ -58,10 +59,10 @@ export default {
   },
   methods: {
     add: function() {
-      this.list.push({ });
+      this.list.push({ name: "Juan" });
     },
     replace: function() {
-      this.list = [{ }];
+      this.list = [{ name: "Edgard" }];
     },
     clone: function(el) {
       return {
