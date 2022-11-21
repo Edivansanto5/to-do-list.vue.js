@@ -1,8 +1,9 @@
 <template>
     <div conteiner>
         <div class="box">
-            <input type="text" placeholder="Digite sua Tarefa aqui">
             
+            <input type="text" placeholder="Digite sua Tarefa aqui"><button>Enviar</button>
+
         </div>
 
 
