@@ -1,129 +1,77 @@
 <template>
-  <div class="conteiner">
-    <h1>Todo-List</h1>
-    <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa"> <!-- ok-->
-    <button type="button" @click="addLista()" > Enviar</button>
-
-    <div v-for="(lista, index) in listas" :key="index" class="list">
-      <form class="mr-10" >
-        <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)"  />
-
-      </form>
-        <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span> 
-        <button class="btn">A fazer</button>
-        <button class="btn">Fazendo</button>
-        <button class="btn">Feito</button>
-        <button class="btn-excluir" @click="deleta">Excluir</button>
-      
+  <div class="row">
+    <div class="col-3">
+      <h3>A fazer</h3>
+      <draggable class="list-group" :list="list1" group="people" @change="log">
+        <input type="text">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in list1"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
     </div>
-    <br>
-    <br>
+
+    <div class="col-3">
+      <h3>Fazendo</h3>
+      <draggable class="list-group" :list="list2" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in list2"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
+    </div>
+
+    <rawDisplayer class="col-3" :value="list1" title="List 1" />
+
+    <rawDisplayer class="col-3" :value="list2" title="List 2" />
   </div>
-    
 </template>
 <script>
+import draggable from "vuedraggable";
 
 export default {
-  name:'toList', 
-  data(){
-    return{
-      lista: {
-        checked: false,
-        text: '',
-      },
-
-      listas: [],
-    }
+  name: "two-lists",
+  display: "Two Lists",
+  order: 1,
+  components: {
+    draggable
   },
-  methods:{
-    addLista(){
-      this.listas.push(this.lista) // add um item na lista
-      this.lista = {
-        checked: false,
-        text: '',
-      }          
+  data() {
+    return {
+      list1: [
+        { name: "John", id: 1 },
+        { name: "Joao", id: 2 },
+        { name: "Jean", id: 3 },
+        { name: "Gerard", id: 4 }
+      ],
+      list2: [
+        { name: "Juan", id: 5 },
+        { name: "Edgard", id: 6 },
+        { name: "Johnson", id: 7 }
+      ]
+    };
+  },
+  methods: {
+    add: function() {
+      this.list.push({ name: "Juan" });
     },
-    changeChecked (index) {
-      this.listas[index].checked = !this.listas[index].checked
-      console.log(this.listas[index].checked) 
+    replace: function() {
+      this.list = [{ name: "Edgard" }];
     },
-    deleta(){
-      
-      this.listas.pop(this.listas)
-      console.log('veio parar aqui');                                                            
-  
+    clone: function(el) {
+      return {
+        name: el.name + " cloned"
+      };
     },
-
+    log: function(evt) {
+      window.console.log(evt);
+    }
   }
- 
-}
+};
 </script>
-
-<style>
-  body{
-    background: #4fc08c;
-    margin: 5px;
-  }
-  .conteiner{
-    background: white;
-    max-height: 500px;
-    padding-top: 15px;  
-    text-align: center; 
-    border-radius: 15px;
-   
-  }
- 
-  button{
-    border-radius: 10px;
-    background: #4fc08c;
-    width: 120px;
-    height: 40px;
-    margin: 5px;
-    font-size: 20px;
-
-  }
-  .btn{
-    border-radius: 10px;
-    background: #5cb2e4;
-    width: 140px;
-    height: 40px;
-    margin: 5px;
-    font-size: 22px;
-    opacity: 85%;
-
-  }
-  .btn-excluir{
-    background: red;
-    opacity: 85%;
-    
-  }
-
-  li{
-    padding-top: 10px;
-  }
-  a{
-    color: red;
-  }
-
-  .line-through {
-    text-decoration: line-through;
-    color: rgba(0, 0, 0, 0.3);
-  }
-
-  .list {
-    display: flex;
-    justify-content: justify;
-    padding-left: 160px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 28px;
-  }
-
-  .mr-10 {
-    margin-right: 10px;
-  }
-  input{
-    font-size: 22px;
-  }
-
-</style>
