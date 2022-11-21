@@ -1,13 +1,22 @@
 <template>
     <div conteiner>
         <div class="box">
-            <h1>Todo-List</h1>
+           
             <input type="text" placeholder="Digite sua Tarefa aqui">
             <button>Enviar</button>
-            <h1>Tarefas a Fazer</h1>
+            <h2>Tarefas a Fazer</h2>
             <draggable :list="list1" group="people" @change="log">
                 <div v-for="(element,index) in list1" :key="element.name">{{list1.name}}{{index}}</div>
             </draggable>
+        </div>
+        <div class="box">
+            <h2>Tarefas Fazendo</h2>
+            <draggable :list="list2" group="people" @change="log">
+                <div v-for="(element,index) in list2" :key="element.name">{{list2.name}}{{index}}</div>
+            </draggable>
+
+            <rawDisplayer :value="list1" title="List 1" />
+            <rawDisplayer :value="list2" title="List 2" />
         </div>
 
 
@@ -43,7 +52,23 @@ export default {
     },
     components: { 
         draggable 
+    },
+    methods: {
+    add: function() {
+      this.list.push({ name: "Juan" });
+    },
+    replace: function() {
+      this.list = [{ name: "Edgard" }];
+    },
+    clone: function(el) {
+      return {
+        name: el.name + " cloned"
+      };
+    },
+    log: function(evt) {
+      window.console.log(evt);
     }
+  }
 }
 </script>
 <style>

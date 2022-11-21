@@ -1,27 +1,30 @@
 <template>
-  <div class="row">
+  <div class="conteiner">
+    <h1>Todo-List</h1>
     <div class="col-3">
       <h3>A fazer</h3>
       <draggable :list="list1" group="people" @change="log">
-        <div class="list-group-item" v-for="(element, index) in list1" :key="element.name">
-          {{ element.name }} {{ index }}
-        </div>
+        <div v-for="(element) in list1" :key="element.name">{{ element.name }}</div>
       </draggable>
     </div>
 
     <div class="col-3">
       <h3>Fazendo</h3>
-      <draggable class="list-group" :list="list2" group="people" @change="log">
-        <div class="list-group-item" v-for="(element, index) in list2" :key="element.name">
-          {{ element.name }} {{ index }}
-        </div>
+      <draggable :list="list2" group="people" @change="log">
+        <div v-for="(element) in list2" :key="element.name">{{ element.name }} </div>
       </draggable>
     </div>
 
-    <rawDisplayer class="col-3" :value="list1" title="List 1" />
-    <rawDisplayer class="col-3" :value="list2" title="List 2" />
-
+    <div class="col-3">
+      <h3>Feito</h3>
+      <draggable :list="list3" group="people" @change="log">
+        <div v-for="(element) in list3" :key="element.name">{{ element.name }}</div>
+      </draggable>
+    </div>
   </div>
+    <!-- <rawDisplayer class="col-3" :value="list1" title="List 1" />
+    <rawDisplayer class="col-3" :value="list2" title="List 2" /> -->
+
 </template>
 <script>
 import draggable from "vuedraggable";
@@ -45,15 +48,20 @@ export default {
         { name: "Juan", id: 5 },
         { name: "Edgard", id: 6 },
         { name: "Johnson", id: 7 }
+      ],
+      list3: [
+        { name: "Edivan"},
+        { name: "Edigar" },
+        { name: "Jumento"}
       ]
     };
   },
   methods: {
     add: function() {
-      this.list.push({ name: "Juan" });
+      this.list.push({ });
     },
     replace: function() {
-      this.list = [{ name: "Edgard" }];
+      this.list = [{ }];
     },
     clone: function(el) {
       return {
