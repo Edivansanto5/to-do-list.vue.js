@@ -1,18 +1,15 @@
-<template>
+<!-- <template>
   <div class="conteiner">
     <h1>Todo-List</h1>
-    <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa"> <!-- ok-->
+    <input type="text" v-model.trim="lista.text" placeholder="Digite Qualque coisa">
     <button type="button" @click="addLista()" > Enviar</button>
 
-    <div v-for="(lista, index) in listas" :key="index" class="list">
-      <form class="mr-10" >
-        <input :id="index" type="checkbox" v-model.trim="lista.checked" @click="changeChecked(index)"  />
-
-      </form>
-        <span :class="listas[index].checked ? 'line-through mr-10' : 'mr-10'" >{{ lista.text }}</span> 
-        <button class="btn">A fazer</button>
-        <button class="btn">Fazendo</button>
-        <button class="btn">Feito</button>
+    <div v-for="(lista, index) in listas" :key="index">
+    
+        <span>{{ lista.text }}</span> 
+        <button class="btn" @click="fazer()">A fazer</button>
+        <button class="btn" @click="fazendo()">Fazendo</button>
+        <button class="btn" @click="feito()">Feito</button>
         <button class="btn-excluir" @click="deleta">Excluir</button>
       
     </div>
@@ -30,8 +27,11 @@ export default {
       lista: {
         checked: false,
         text: '',
+        lista2: {
+        checked: false,
+        text: '',
       },
-
+,
       listas: [],
     }
   },
@@ -43,10 +43,24 @@ export default {
         text: '',
       }          
     },
-    changeChecked (index) {
-      this.listas[index].checked = !this.listas[index].checked
-      console.log(this.listas[index].checked) 
+    fazer(){
+      // var array = new Array();
+      //   $('select option:selected').each(function(index, el) {
+      //   array.push($(el).val());
+      // });
+      // console.log(array);
+      console.log('está por fazer');
     },
+    fazendo(){
+      console.log('está fazendo');
+    },
+    feito(){
+      console.log('está feito');
+    },
+    // changeChecked (index) {
+    //   this.listas[index].checked = !this.listas[index].checked
+    //   console.log(this.listas[index].checked) 
+    // },
     deleta(){
       
       this.listas.pop(this.listas)
@@ -56,8 +70,9 @@ export default {
 
   }
  
-}
-</script>
+} -->
+
+<!-- </script>
 
 <style>
   body{
@@ -126,4 +141,4 @@ export default {
     font-size: 22px;
   }
 
-</style>
+</style> --> 

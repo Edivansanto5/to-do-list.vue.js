@@ -5,26 +5,16 @@
     <button type="button" @click="addLista()" > Enviar</button>
 
     <div v-for="(lista, index) in listas" :key="index" >
-        <span>{{ lista.text }}</span> <a class="mr-10" href="#" @click="deleta">Excluir</a>
-        <span>{{listas.text}}</span>
+        <span>{{ lista.text }}</span> 
+        <button class="btn">A fazer</button>
+        <button class="btn">Fazendo</button>
+        <button class="btn">Feito</button>
+        <button class="btn-excluir" @click="deleta">Excluir</button>
+        
     </div>
     <br>
   </div>
-    <!-- <div class="conteiner">
-      <div class="box">
-            <h1>{{title}}</h1>
-        </div>
-        <h1>{{nome}}</h1>
-        <button class="btn" type="###">Status</button>
-        <input type="text" v-model="lista.text" placeholder="Digite aqui uma Tarefa"> 
-        <button class="btn" @click="addLista()">Adcionar</button>
-
-        <div v-for="(lista,index) in listas" :key="index">
-           <p>fasdfadfaf</p>
-        </div>
-        
    
-    </div> -->
 </template>
 <script>
 
@@ -53,7 +43,12 @@ export default {
 </script>
 
 <style>
-    
+   .btn{
+       background: cornsilk;
+   }
+   .btn-excluir{
+       background: red;
+   }
 
     
 </style>
