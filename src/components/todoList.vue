@@ -49,6 +49,7 @@ export default {
    .btn-excluir{
        background: red;
        font-size: large;
+       
    }
 
     
