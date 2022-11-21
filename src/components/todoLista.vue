@@ -5,10 +5,8 @@
             <input type="text" placeholder="Digite sua Tarefa aqui">
             <button>Enviar</button>
             <h1>Tarefas a Fazer</h1>
-            <draggable>
-                <div :list="list1">
-
-                </div>
+            <draggable :list="list1" group="people" @change="log">
+                <div v-for="(element,index) in list1" :key="element.name">{{list1.name}}{{index}}</div>
             </draggable>
         </div>
 
