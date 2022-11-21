@@ -50,6 +50,7 @@ export default {
        background: red;
        font-size: large;
        
+
    }
 
     
