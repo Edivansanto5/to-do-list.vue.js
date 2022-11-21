@@ -1,9 +1,10 @@
 <template>
     <div conteiner>
         <div class="box">
-            
-            <input type="text" placeholder="Digite sua Tarefa aqui"><button>Enviar</button>
-
+            <h1>Todo-List</h1>
+            <input type="text" placeholder="Digite sua Tarefa aqui">
+            <button>Enviar</button>
+            <h1>Tarefas a Fazer</h1>
         </div>
 
 
