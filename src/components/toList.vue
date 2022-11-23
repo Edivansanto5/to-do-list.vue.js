@@ -1,9 +1,9 @@
 <template>
   <div class="conteiner">
-    <div>
+    <div class="box">
       <h1>Todo-List</h1>
-    <input type="text" placeholder="Digite sua Tarefa">
-    <button>Enviar</button>
+      <input type="text" placeholder="Digite sua Tarefa">
+      <button>Enviar</button>
     </div>
    
     <div class="list1">
@@ -79,36 +79,49 @@ export default {
 };
 </script>
 <style>
-    body{
-      background: #fef6e4;
-      font-size: 28px;
-      
-    }
-    .list1,.list2,.list3{
-      background:#feedc4;
-      width: 25%;
-      border-radius: 10px;
-      display: inline-block;
-      margin: 10px;
-      
-    }
-    
-    h3{
-      text-align: center;
-    }
-    .listas{
-      margin: 3px;
-      padding: 2px;
-    }
-    .conteiner{
-      widows: 100%;
-      height: 100%;
-    }
-    .listas{
-      margin: 5px;
-      padding: 5px;
-     
-    }
-    
+  body{
+    background: #fef6e4;
+    font-size: 28px; 
+  }
+  .list1,.list2,.list3{
+    background:#feedc4;
+    width: 25%;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+   }
+  h3{
+    text-align: center;
+  }
+  .listas{
+    margin: 3px;
+    padding: 2px;
+  }
+  .conteiner{
+    widows: 100%;
+    height: 100%;
+  }
+  .listas{
+    margin: 5px;
+    padding: 5px;   
+  }
+  input{
+    font-size: 22px;
+    padding: 5px;
+    margin: 15px;
+    width: 490px;
+    border-radius: 12px;
+  }
+  button{
+    font-size: 22px;
+    padding: 5px;
+    width: 105px;
+    border-radius: 10px;
+    margin: 10px;
+    background:#f8c44a ;
+  }
+  h1{
+    text-align: center;
+  }
   
 </style>

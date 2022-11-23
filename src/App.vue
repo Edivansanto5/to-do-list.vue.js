@@ -1,7 +1,6 @@
 <template>
   <div>
     <toList/> 
-    <hr>
     <!-- <todoLista/> -->
   </div>
 </template>
