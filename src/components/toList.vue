@@ -1,23 +1,24 @@
 <template>
   <div class="conteiner">
     <h1>Todo-List</h1>
-    <div class="col-3">
-      <input type="text" placeholder="Digite sua Tarefa">
-      <button>Enviar</button>
+    <input type="text" placeholder="Digite sua Tarefa">
+    <button>Enviar</button>
+    <div class="list1">
+   
       <h3>A fazer</h3>
       <draggable :list="list1" group="people" @change="log">
         <div v-for="(element) in list1" :key="element.name">{{ element.name }}</div>
       </draggable>
     </div>
 
-    <div class="col-3">
+    <div class="list2">
       <h3>Fazendo</h3>
       <draggable :list="list2" group="people" @change="log">
         <div v-for="(element) in list2" :key="element.name">{{ element.name }} </div>
       </draggable>
     </div>
 
-    <div class="col-3">
+    <div class="list3">
       <h3>Feito</h3>
       <draggable :list="list3" group="people" @change="log">
         <div v-for="(element) in list3" :key="element.name">{{ element.name }}</div>
@@ -77,3 +78,18 @@ export default {
   }
 };
 </script>
+<style>
+    body{
+      background: #fef6e4;
+      font-size: 28px;
+    }
+    .list1,.list3,.list2{
+      background:#feedc4;
+      width: 25%;
+      border-radius: 10px;
+    }
+    
+    h3{
+      text-align: center;
+    }
+</style>
