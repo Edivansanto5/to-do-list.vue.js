@@ -2,6 +2,8 @@
   <div class="conteiner">
     <h1>Todo-List</h1>
     <div class="col-3">
+      <input type="text" placeholder="Digite sua Tarefa">
+      <button>Enviar</button>
       <h3>A fazer</h3>
       <draggable :list="list1" group="people" @change="log">
         <div v-for="(element) in list1" :key="element.name">{{ element.name }}</div>
