@@ -2,9 +2,13 @@
   <div class="conteiner">
     <div class="box">
       <h1>Todo-List</h1>
-      <input type="text" placeholder="Digite sua Tarefa">
-      <button>Enviar</button>
+      <input type="text" v-model="lista.text" placeholder="Digite Qualque coisa">
+      <button type="button" @click="addLista()" > Enviar</button>
     </div>
+    <div v-for="(lista, index) in listas" :key="index"> 
+        <div>{{lista.text}}</div>
+    </div>
+
    
     <div class="list1">
       <h3>Lista a Fazer</h3>
@@ -25,7 +29,9 @@
         <div class="listas" v-for="(element) in list3" :key="element.name">{{ element.name }}</div>
       </draggable>
     </div>
+    
   </div>
+  
     
 </template>
 <script>
@@ -35,11 +41,13 @@ export default {
   // name: "toList",
   // display: "Two Lists",
   // order: 1,
-  components: {
-    draggable
-  },
+
   data() {
     return {
+      lista:{
+        text:''
+      },
+      listas:[],
       list1: [
         { name: "John"},
         { name: "Joao"},
@@ -60,22 +68,20 @@ export default {
       ]
     };
   },
-  // methods: {
-  //   add: function() {
-  //     this.list.push({ name: "Juan" });
-  //   },
-  //   replace: function() {
-  //     this.list = [{ name: "Edgard" }];
-  //   },
-  //   clone: function(el) {
-  //     return {
-  //       name: el.name + " cloned"
-  //     };
-  //   },
-  //   log: function(evt) {
-  //     window.console.log(evt);
-  //   }
-  // }
+  components: {
+    draggable
+  },
+  methods:{
+    addLista(){
+      this.listas.push(this.lista) // add um item na lista
+      this.lista = {
+        
+        text: '',
+      }
+           
+    },
+  },
+
 };
 </script>
 <style>
