@@ -5,30 +5,28 @@
     <button>Enviar</button>
     <div class="list1">
    
-      <h3>A fazer</h3>
+      <h3>Lista a Fazer</h3>
       <draggable :list="list1" group="people" @change="log">
-        <div v-for="(element) in list1" :key="element.name">{{ element.name }}</div>
+        <div v-for="(element) in list1" :key="element.name">{{ element.name }}</div> <br>
       </draggable>
     </div>
+   
 
     <div class="list2">
-      <h3>Fazendo</h3>
+      <h3>Lista em Andamento</h3>
       <draggable :list="list2" group="people" @change="log">
-        <div v-for="(element) in list2" :key="element.name">{{ element.name }} </div>
+        <div v-for="(element) in list2" :key="element.name">{{ element.name }} </div><br>
       </draggable>
     </div>
 
     <div class="list3">
-      <h3>Feito</h3>
+      <h3>Lista Concluidas</h3>
       <draggable :list="list3" group="people" @change="log">
-        <div v-for="(element) in list3" :key="element.name">{{ element.name }}</div>
+        <div v-for="(element) in list3" :key="element.name">{{ element.name }}</div><br>
       </draggable>
     </div>
   </div>
-    <!-- <rawDisplayer class="col-3" :value="list1" title="List 1" />
-    <rawDisplayer class="col-3" :value="list2" title="List 2" /> -->
-
-
+    
 </template>
 <script>
 import draggable from "vuedraggable";
@@ -60,22 +58,22 @@ export default {
       ]
     };
   },
-  methods: {
-    add: function() {
-      this.list.push({ name: "Juan" });
-    },
-    replace: function() {
-      this.list = [{ name: "Edgard" }];
-    },
-    clone: function(el) {
-      return {
-        name: el.name + " cloned"
-      };
-    },
-    log: function(evt) {
-      window.console.log(evt);
-    }
-  }
+  // methods: {
+  //   add: function() {
+  //     this.list.push({ name: "Juan" });
+  //   },
+  //   replace: function() {
+  //     this.list = [{ name: "Edgard" }];
+  //   },
+  //   clone: function(el) {
+  //     return {
+  //       name: el.name + " cloned"
+  //     };
+  //   },
+  //   log: function(evt) {
+  //     window.console.log(evt);
+  //   }
+  // }
 };
 </script>
 <style>
