@@ -41,34 +41,14 @@
 import draggable from "vuedraggable";
 
 export default {
-  // name: "toList",
-  // display: "Two Lists",
-  // order: 1,
-
+ 
   data() {
     return {
       lista:{
         text:''
       },
       listas:[],
-      // list1: [
-      //   { name: "John"},
-      //   { name: "Joao"},
-      //   { name: "Jean"},
-      //   { name: "Gerard"}
-      // ],
-      // list2: [
-      //   { name: "Juan"},
-      //   { name: "Edgard"},
-      //   { name: "Johnson"},
-      //   { name: "Talita"}
-      // ],
-      // list3: [
-      //   { name: "Edivan"},
-      //   { name: "Edigar" },
-      //   { name: "Jumento"},
-      //   { name: "Cavalona"}
-      // ]
+    
     };
   },
   components: {
@@ -78,10 +58,8 @@ export default {
     addLista(){
       this.listas.push(this.lista) // add um item na lista
       this.lista = {
-        
         text: '',
-      }
-           
+      }     
     },
   },
 
@@ -131,6 +109,5 @@ export default {
   }
   h1{
     text-align: center;
-  }
-  
+  } 
 </style>
