@@ -5,10 +5,11 @@
       <input type="text" v-model="lista.text" placeholder="Digite Qualque coisa">
       <button type="button" @click="addLista()" > Enviar</button>
     </div>
-    <div v-for="(lista, index) in listas" :key="index"> 
-        <div>{{lista.text}}</div>
+    <draggable :lista="listas" group="people" @change="log">
+    <div class="listas" v-for="(lista, index) in listas" :key="index"> 
+        <span>{{lista.text}}</span>
     </div>
-
+  </draggable>
    
     <div class="list1">
       <h3>Lista a Fazer</h3>
