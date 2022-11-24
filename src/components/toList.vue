@@ -4,30 +4,32 @@
       <h1>Todo-List</h1>
       <input type="text" v-model="lista.text" placeholder="Digite Qualque coisa">
       <button type="button" @click="addLista()" > Enviar</button>
+
+      <draggable :lista="listas" group="people" >
+        <div class="listas" v-for="(lista, index) in listas" :key="index"> 
+          <span>{{lista.text}}</span>
+        </div>
+      </draggable>
     </div>
-    <draggable :lista="listas" group="people" @change="log">
-    <div class="listas" v-for="(lista, index) in listas" :key="index"> 
-        <span>{{lista.text}}</span>
-    </div>
-  </draggable>
-   
+
     <div class="list1">
       <h3>Lista a Fazer</h3>
       <draggable :list="list1" group="people" @change="log">
         <div class="listas" v-for="(element) in list1" :key="element.name">{{ element.name }}</div> 
       </draggable>
     </div>
+    
     <div class="list2">
       <h3>Lista em Andamento</h3>
       <draggable :list="list2" group="people">
-        <div class="listas" v-for="(element) in list2" :key="element.name">{{ element.name }} </div>
+       
       </draggable>
     </div>
 
     <div class="list3">
       <h3>Lista Concluidas</h3>
       <draggable :list="list3" group="people" @change="log">
-        <div class="listas" v-for="(element) in list3" :key="element.name">{{ element.name }}</div>
+       
       </draggable>
     </div>
     
@@ -49,24 +51,24 @@ export default {
         text:''
       },
       listas:[],
-      list1: [
-        { name: "John"},
-        { name: "Joao"},
-        { name: "Jean"},
-        { name: "Gerard"}
-      ],
-      list2: [
-        { name: "Juan"},
-        { name: "Edgard"},
-        { name: "Johnson"},
-        { name: "Talita"}
-      ],
-      list3: [
-        { name: "Edivan"},
-        { name: "Edigar" },
-        { name: "Jumento"},
-        { name: "Cavalona"}
-      ]
+      // list1: [
+      //   { name: "John"},
+      //   { name: "Joao"},
+      //   { name: "Jean"},
+      //   { name: "Gerard"}
+      // ],
+      // list2: [
+      //   { name: "Juan"},
+      //   { name: "Edgard"},
+      //   { name: "Johnson"},
+      //   { name: "Talita"}
+      // ],
+      // list3: [
+      //   { name: "Edivan"},
+      //   { name: "Edigar" },
+      //   { name: "Jumento"},
+      //   { name: "Cavalona"}
+      // ]
     };
   },
   components: {
