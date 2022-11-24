@@ -5,17 +5,15 @@
       <input type="text" v-model="lista.text" @keyup.enter="addLista(lista.text)" placeholder="Digite Qualquer coisa">
       <button type="button" @click="addLista(lista.text)" > Enviar</button>
 
-      <draggable :lista="listas" group="people" >
-        <div class="listas" v-for="(lista, index) in listas" :key="index"> 
-          <span>{{lista.text}}</span>
-        </div>
-      </draggable>
     </div>
 
     <div class="list1">
       <h3>Listas a Fazer</h3>
       <draggable :list="list1" group="people" @change="log">
-        <div class="listas" v-for="(element) in list1" :key="element.name">{{ element.name }}</div> 
+  
+        <div class="listas" v-for="(lista, index) in listas" :key="index"> 
+          <span>{{lista.text}}</span>
+        </div>
       </draggable>
     </div>
     
@@ -68,11 +66,7 @@ export default {
         }   
       },
     },
-    // removeLista(lista) {
-    //   if(lista) {
-    //   }
-    // }
-
+  
 };
 </script>
 <style>
