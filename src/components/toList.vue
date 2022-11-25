@@ -3,16 +3,16 @@
     <div class="box">
       <h1>Todo-List</h1>
       <input type="text" v-model="lista.text" @keyup.enter="addLista(lista.text)" placeholder="Digite Qualquer coisa">
-      <button type="button" @click="addLista(lista.text)" > Enviar</button>
-
+      <button type="button" @click="addLista(lista.text) "> Enviar</button>
     </div>
 
     <div class="list1">
       <h3>Listas a Fazer</h3>
       <draggable :list="list1" group="people" @change="log">
   
-        <div class="listas" v-for="(lista, index) in listas" :key="index"> 
+        <div class="listas" v-for="(lista) in listas" :key="lista"> 
           <span>{{lista.text}}</span>
+          <button v-on:click="removeElement(lista)">remove</button>
         </div>
       </draggable>
     </div>
@@ -38,6 +38,7 @@
 <script>
 import draggable from "vuedraggable";
 
+
 export default {
  
   data() {
@@ -59,6 +60,7 @@ export default {
 
           this.listas.push(this.lista) // add um item na lista
           this.lista = {
+            // id: 0,
             text: '',
           }
           }  else {
@@ -66,6 +68,31 @@ export default {
         }   
       },
     },
+    // genId() {
+    //   return (this.id += 1); 
+    // },
+    // getIndex(lista) {
+    //   let index = this.listas.findIndex( item => item.id === lista.id );
+    //   return index; 
+    // },
+    // removeLista(lista){
+    //   let index = this.getIndex(lista);
+    //   this.listas.splice(index, 1)
+    // },
+    // removelista() {
+    //   this.listas.splice(this.lista)
+    //   this.lista = {
+    //     text: '',
+    //   }
+    // },
+    removeElement : function(index) {
+      this.listas.splice(index, 1)
+    }
+    // removeLista(lista) {
+    //   this.listas.splice(index, 1)
+
+    // }
+   
   
 };
 </script>
