@@ -13,7 +13,7 @@
           <div class="listas" v-for="(lista,index) in listas" :key="index"> 
             <span>{{lista.text}}</span>
             
-            <a href="#" @click="removeElement()" ><i class="fa-solid fa-trash"></i></a>
+            <a href="#" @click="removeLista(index)" ><i class="fa-solid fa-trash"></i></a>
             
             
           </div>
@@ -70,9 +70,8 @@ export default {
           alert('Por favor, entre com caracteres validos')
         }   
       },
-      removeElement : function(index) {
+      removeLista : function(index) {
       this.listas.splice(index, 1)
-     
     }
     },
    
@@ -102,6 +101,7 @@ export default {
     widows: 100%;
     height: 100%;
     text-align: center;
+    display: flex;
     }
   .listas{
     margin: 5px;
