@@ -6,32 +6,32 @@
       <button type="button" @click="addLista(lista.text) "> Enviar</button>
     </div>
 
-    <div class="list1">
-      <h3>Listas a Fazer</h3>
-      <draggable  group="people" >
-  
-        <div class="listas" v-for="(lista,index) in listas" :key="index"> 
-          <span>{{lista.text}}</span>
-         
-          <a href="" @click="removeElement()" ><i class="fa-solid fa-trash"></i></a>
-       
+      <div class="list1">
+        <h3>A Fazer</h3>
+        <draggable  group="people" >
           
-        </div>
-      </draggable>
-    </div>
-    
-    <div class="list2">
-      <h3>Listas em Andamento</h3>
-      <draggable  group="people">
-       
-      </draggable>
-    </div>
-
-    <div class="list3">
-      <h3>Listas Concluidas</h3>
-      <draggable  group="people">
-       
-      </draggable>
+          <div class="listas" v-for="(lista,index) in listas" :key="index"> 
+            <span>{{lista.text}}</span>
+            
+            <a href="#" @click="removeElement()" ><i class="fa-solid fa-trash"></i></a>
+            
+            
+          </div>
+        </draggable>
+      </div>
+      
+      <div class="list2">
+        <h3>Em Andamento</h3>
+        <draggable  group="people">
+          
+        </draggable>
+      </div>
+      
+      <div class="list3">
+        <h3>Concluidas</h3>
+        <draggable  group="people">
+          
+        </draggable>
     </div>
     
   </div>
@@ -75,78 +75,63 @@ export default {
      
     }
     },
-    // genId() {
-    //   return (this.id += 1); 
-    // },
-    // getIndex(lista) {
-    //   let index = this.listas.findIndex( item => item.id === lista.id );
-    //   return index; 
-    // },
-    // removeLista(lista){
-    //   let index = this.getIndex(lista);
-    //   this.listas.splice(index, 1)
-    // },
-    // removelista() {
-    //   this.listas.splice(this.lista)
-    //   this.lista = {
-    //     text: '',
-    //   }
-    // },
-    // removeElement : function(index) {
-    //   this.listas.splice(index, 1)
-    //   console.log('aqfjgldsfg');
-    // }
-    // removeLista(lista) {
-    //   this.listas.splice(index, 1)
-
-    // }
    
   
 };
 </script>
 <style>
   body{
-    background: #fef6e4;
-    font-size: 28px; 
+    background: #eee;
+    font-size: 20px; 
+  
   }
-  .list1,.list2,.list3{
-    background:#feedc4;
-    width: 25%;
+
+  .list1, .list2, .list3{
+    background-color: #fff;
     border-radius: 10px;
+    width: 25%;
     display: inline-block;
     margin: 10px;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .4);
    }
+
   h3{
     text-align: center;
-  }
-  .listas{
-    margin: 3px;
-    padding: 2px;
   }
   .container{
     widows: 100%;
     height: 100%;
-  }
+    text-align: center;
+    }
   .listas{
     margin: 5px;
-    padding: 5px;   
+    padding: 5px; 
   }
   input{
     font-size: 22px;
-    padding: 5px;
-    margin: 15px;
-    width: 490px;
+    padding: .3rem;
+    margin: 1rem;
+    width: 20rem;
     border-radius: 12px;
+    background-color: #eee;
   }
   button{
     font-size: 22px;
-    padding: 5px;
+    padding: .3rem;
     width: 105px;
     border-radius: 10px;
     margin: 10px;
-    background:#f8c44a ;
+    background:#266DD3;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
   h1{
     text-align: center;
-  } 
+  }
+
+
+
+
 </style>
