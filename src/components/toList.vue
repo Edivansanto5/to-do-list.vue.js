@@ -8,25 +8,28 @@
 
     <div class="list1">
       <h3>Listas a Fazer</h3>
-      <draggable :list="list1" group="people" @change="log">
+      <draggable  group="people" >
   
-        <div class="listas" v-for="(lista) in listas" :key="lista"> 
+        <div class="listas" v-for="(lista,index) in listas" :key="index"> 
           <span>{{lista.text}}</span>
-          <button v-on:click="removeElement(lista)">remove</button>
+         
+          <a href="" @click="removeElement()" ><i class="fa-solid fa-trash"></i></a>
+       
+          
         </div>
       </draggable>
     </div>
     
     <div class="list2">
       <h3>Listas em Andamento</h3>
-      <draggable :list="list2" group="people">
+      <draggable  group="people">
        
       </draggable>
     </div>
 
     <div class="list3">
       <h3>Listas Concluidas</h3>
-      <draggable :list="list3" group="people" @change="log">
+      <draggable  group="people">
        
       </draggable>
     </div>
@@ -67,6 +70,10 @@ export default {
           alert('Por favor, entre com caracteres validos')
         }   
       },
+      removeElement : function(index) {
+      this.listas.splice(index, 1)
+     
+    }
     },
     // genId() {
     //   return (this.id += 1); 
@@ -85,9 +92,10 @@ export default {
     //     text: '',
     //   }
     // },
-    removeElement : function(index) {
-      this.listas.splice(index, 1)
-    }
+    // removeElement : function(index) {
+    //   this.listas.splice(index, 1)
+    //   console.log('aqfjgldsfg');
+    // }
     // removeLista(lista) {
     //   this.listas.splice(index, 1)
 
