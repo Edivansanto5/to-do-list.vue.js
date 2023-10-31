@@ -15,6 +15,7 @@ import '@fortawesome/fontawesome-free/js/all.js'
     components:{
      toList,
     //  todoLista
+    template
   
     }
   }
